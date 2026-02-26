@@ -124,7 +124,3 @@ Place your images in `public/assets/images/` and reference them in the content c
 ## 📄 License
 
 This project is open source and available for personal use.
-
-## 🙏 Acknowledgments
-
-- Built with [Astro](https://astro.build)
