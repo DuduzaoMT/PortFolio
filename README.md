@@ -1,6 +1,7 @@
 # Eduardo Silva Portfolio
 
-Personal portfolio built with Astro, inspired by [@tomcomtang/astro-multiplepage-portfolio](https://github.com/tomcomtang/astro-multiplepage-portfolio).
+Personal portfolio built with Astro.
+
 ## 🚀 Live Demo
 
 Visit the live portfolio at: [https://DuduzaoMT.github.io/PortFolio/](https://DuduzaoMT.github.io/PortFolio/)
@@ -18,19 +19,29 @@ Visit the live portfolio at: [https://DuduzaoMT.github.io/PortFolio/](https://Du
 /
 ├── public/
 │   └── assets/
-│       └── images/
+│       ├── cv/
+│       ├── images/
+│       │   └── about/
+│       └── robot/
+│           ├── license.txt
+│           └── textures/
 ├── src/
 │   ├── components/
+│   │   ├── Footer.astro
 │   │   ├── Navigation.astro
-│   │   └── Footer.astro
+│   │   └── Robot.astro
 │   ├── config/
 │   │   └── content.ts
+│   ├── content/
 │   ├── pages/
-│   │   ├── index.astro
-│   │   ├── about.astro
-│   │   └── projects.astro
-│   └── utils/
-└── package.json
+│   │   └── index.astro
+│   ├── utils/
+│   └── env.d.ts
+├── astro.config.mjs
+├── package.json
+├── tailwind.config.js
+├── tsconfig.json
+└── README.md
 ```
 
 ## 🚀 Getting Started
@@ -43,17 +54,20 @@ Visit the live portfolio at: [https://DuduzaoMT.github.io/PortFolio/](https://Du
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/DuduzaoMT/PortFolio.git
 cd PortFolio
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Start the development server:
+
 ```bash
 npm run dev
 ```
@@ -83,6 +97,7 @@ Your site will be available at: `https://DuduzaoMT.github.io/PortFolio/`
 ### Manual Deployment
 
 If you need to manually trigger a deployment:
+
 1. Go to the **Actions** tab in your GitHub repository
 2. Select the **Deploy to GitHub Pages** workflow
 3. Click **Run workflow**
@@ -92,6 +107,7 @@ If you need to manually trigger a deployment:
 ### Update Content
 
 Edit the content in `src/config/content.ts` to customize:
+
 - Personal information
 - Project details
 - Skills and experience
@@ -111,5 +127,4 @@ This project is open source and available for personal use.
 
 ## 🙏 Acknowledgments
 
-- Template inspiration from [@tomcomtang/astro-multiplepage-portfolio](https://github.com/tomcomtang/astro-multiplepage-portfolio)
 - Built with [Astro](https://astro.build)
