@@ -103,7 +103,7 @@ export const experienceContent = {
   work: [
     {
       period: "Jun 2025 — Sep 2025",
-      position: "Software Engineer",
+      position: "Software Engineer Intern",
       company: "SingleStore",
       logo: "https://www.google.com/s2/favicons?domain=singlestore.com&sz=64",
       bullets: [
@@ -115,7 +115,7 @@ export const experienceContent = {
     },
     {
       period: "Jul 2024 — Sep 2024",
-      position: "Software Developer",
+      position: "Software Developer Intern",
       company: "Premium Minds",
       logo: "https://www.google.com/s2/favicons?domain=premiumminds.com&sz=64",
       bullets: [
@@ -164,9 +164,9 @@ export const projectsContent = {
       github: "https://github.com/DuduzaoMT/assetra",
     },
     {
-      title: "DNode Security Framework",
+      title: "DNode Security Platform",
       description:
-        "Developed an advanced security framework implementing comprehensive CIA principles that go beyond traditional TLS encryption. Built multi-layered protection mechanisms with advanced key management systems and real-time integrity verification. Implemented sophisticated tamper detection algorithms and availability guarantees.",
+        "Developed an anonymous vulnerability reporting platform that implements comprehensive CIA principles beyond traditional TLS encryption, featuring a WAF-protected multi-layered network architecture, real-time integrity verification, and advanced tamper detection algorithms with availability guarantees.",
       image:
         "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=1000&auto=format&fit=crop",
       tags: ["Python", "GO", "Cryptography", "Network Security"],
