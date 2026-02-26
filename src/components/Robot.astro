@@ -1,0 +1,15 @@
+---
+---
+<div class="w-full h-[500px]">
+  
+  <model-viewer 
+    src={import.meta.env.BASE_URL + "/assets/robot/scene.gltf"} 
+    camera-orbit="105deg 95deg auto"
+    autoplay 
+    animation-name="Idle" 
+    class="w-full h-full bg-transparent outline-none pointer-events-none"
+  ></model-viewer>
+
+</div>
+
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js" is:inline></script>

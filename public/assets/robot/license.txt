@@ -1,0 +1,11 @@
+Model Information:
+* title:	Rodot 5000 - Flying robot
+* source:	https://sketchfab.com/3d-models/rodot-5000-flying-robot-7a1e77ed31c04e6eb54889b3e1ab0d6c
+* author:	Alexandre Lion (https://sketchfab.com/alexlionco)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Rodot 5000 - Flying robot" (https://sketchfab.com/3d-models/rodot-5000-flying-robot-7a1e77ed31c04e6eb54889b3e1ab0d6c) by Alexandre Lion (https://sketchfab.com/alexlionco) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

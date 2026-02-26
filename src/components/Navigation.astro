@@ -1,90 +1,146 @@
 ---
-
+import { navLinks, siteConfig } from "../config/content";
 ---
 
-<!-- Navigation Bar Component -->
-<nav class="relative z-50">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-nav">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <a
-        href={import.meta.env.BASE_URL}
-        class="text-xl font-bold text-neutral-700 hover:text-neutral-400 dark:text-neutral-300 dark:hover:text-neutral-100 transition-colors"
+        href="#home"
+        class="text-lg font-bold tracking-tight text-neutral-800 dark:text-neutral-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors nav-link"
       >
-        Resume
+        <span class="text-indigo-600 dark:text-indigo-400">E</span>duardo<span class="text-indigo-600 dark:text-indigo-400">.</span>
       </a>
-      <div class="flex items-center space-x-6">
-        <a
-          href={import.meta.env.BASE_URL}
-          class="text-neutral-600 hover:text-neutral-400 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
-          >Home</a
-        >
-        <a
-          href={import.meta.env.BASE_URL + "/projects/"}
-          class="text-neutral-600 hover:text-neutral-400 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
-          >Projects</a
-        >
-        <a
-          href={import.meta.env.BASE_URL + "/about/"}
-          class="text-neutral-600 hover:text-neutral-400 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
-          >About</a
-        >
+      <div class="hidden sm:flex items-center space-x-1">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="nav-link px-4 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-indigo-600 dark:hover:text-indigo-400 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800/50 transition-all duration-200"
+            data-section={link.href.replace("#", "")}
+          >
+            {link.label}
+          </a>
+        ))}
         <button
           id="theme-toggle"
-          class="p-2 rounded-full text-neutral-600 hover:text-neutral-400 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
+          class="ml-2 p-2 rounded-lg text-neutral-600 hover:text-indigo-600 dark:text-neutral-400 dark:hover:text-indigo-400 hover:bg-neutral-100 dark:hover:bg-neutral-800/50 transition-all duration-200"
           title="Toggle theme"
         >
-          <svg
-            class="w-5 h-5 theme-icon-light hidden"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-          >
-            <path
-              d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-            ></path>
+          <svg class="w-5 h-5 theme-icon-light hidden" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" />
           </svg>
-          <svg
-            class="w-5 h-5 theme-icon-dark hidden"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-          >
-            <path
-              d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
-            ></path>
+          <svg class="w-5 h-5 theme-icon-dark hidden" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
           </svg>
         </button>
       </div>
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-btn" class="sm:hidden p-2 rounded-lg text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800/50 transition-all">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden sm:hidden bg-white/95 dark:bg-neutral-900/95 backdrop-blur-lg border-t border-neutral-200 dark:border-neutral-800">
+    <div class="px-4 py-3 space-y-1">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="nav-link block px-4 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-indigo-600 dark:hover:text-indigo-400 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800/50 transition-all"
+          data-section={link.href.replace("#", "")}
+        >
+          {link.label}
+        </a>
+      ))}
+      <button
+        id="theme-toggle-mobile"
+        class="w-full text-left px-4 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-indigo-600 dark:hover:text-indigo-400 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800/50 transition-all"
+      >
+        Toggle Theme
+      </button>
     </div>
   </div>
 </nav>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
+    const nav = document.getElementById("main-nav");
     const themeToggle = document.getElementById("theme-toggle");
-    const lightIcon = themeToggle.querySelector(".theme-icon-light");
-    const darkIcon = themeToggle.querySelector(".theme-icon-dark");
+    const themeToggleMobile = document.getElementById("theme-toggle-mobile");
+    const mobileBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const lightIcons = document.querySelectorAll(".theme-icon-light");
+    const darkIcons = document.querySelectorAll(".theme-icon-dark");
 
-    function updateThemeIcon(isDark) {
-      if (isDark) {
-        lightIcon.classList.add("hidden");
-        darkIcon.classList.remove("hidden");
+    // Nav background on scroll
+    function updateNav() {
+      if (window.scrollY > 50) {
+        nav?.classList.add("bg-white/80", "dark:bg-neutral-900/80", "backdrop-blur-xl", "shadow-sm", "border-b", "border-neutral-200/50", "dark:border-neutral-800/50");
       } else {
-        lightIcon.classList.remove("hidden");
-        darkIcon.classList.add("hidden");
+        nav?.classList.remove("bg-white/80", "dark:bg-neutral-900/80", "backdrop-blur-xl", "shadow-sm", "border-b", "border-neutral-200/50", "dark:border-neutral-800/50");
       }
     }
+    window.addEventListener("scroll", updateNav);
+    updateNav();
 
-    const isDark = document.documentElement.classList.contains("dark");
-    updateThemeIcon(isDark);
+    // Smooth scroll for nav links
+    document.querySelectorAll(".nav-link").forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const href = (link as HTMLAnchorElement).getAttribute("href");
+        if (href) {
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }
+        mobileMenu?.classList.add("hidden");
+      });
+    });
 
-    themeToggle.addEventListener("click", function () {
+    // Active section highlighting
+    const sections = document.querySelectorAll("section[id]");
+    const navLinksAll = document.querySelectorAll(".nav-link[data-section]");
+
+    function updateActiveLink() {
+      let current = "";
+      sections.forEach((section) => {
+        const sectionTop = (section as HTMLElement).offsetTop - 100;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute("id") || "";
+        }
+      });
+      navLinksAll.forEach((link) => {
+        link.classList.remove("text-indigo-600", "dark:text-indigo-400", "bg-indigo-50", "dark:bg-indigo-900/20");
+        if ((link as HTMLElement).dataset.section === current) {
+          link.classList.add("text-indigo-600", "dark:text-indigo-400", "bg-indigo-50", "dark:bg-indigo-900/20");
+        }
+      });
+    }
+    window.addEventListener("scroll", updateActiveLink);
+    updateActiveLink();
+
+    // Theme toggle
+    function updateThemeIcon(isDark: boolean) {
+      lightIcons.forEach(icon => isDark ? icon.classList.add("hidden") : icon.classList.remove("hidden"));
+      darkIcons.forEach(icon => isDark ? icon.classList.remove("hidden") : icon.classList.add("hidden"));
+    }
+    updateThemeIcon(document.documentElement.classList.contains("dark"));
+
+    function toggleTheme() {
       const isDark = document.documentElement.classList.contains("dark");
-      const newTheme = isDark ? "light" : "dark";
-
       document.documentElement.classList.toggle("dark");
-
       updateThemeIcon(!isDark);
+      localStorage.setItem("theme", isDark ? "light" : "dark");
+    }
+    themeToggle?.addEventListener("click", toggleTheme);
+    themeToggleMobile?.addEventListener("click", toggleTheme);
 
-      localStorage.setItem("theme", newTheme);
+    // Mobile menu
+    mobileBtn?.addEventListener("click", () => {
+      mobileMenu?.classList.toggle("hidden");
     });
   });
 </script>
